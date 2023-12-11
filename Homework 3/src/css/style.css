@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Hedvig Letters Serif", serif;
+}
+.navBar {
+  display: flex;
+}
+.navBar ul {
+  display: flex;
+  align-content: space-between;
+}
+header {
+  margin-top: 40px;
+  width: 100vw;
+  display: flex;
+  border-bottom: 1px solid black;
+  justify-content: right;
+  align-items: center;
+  padding-bottom: 20px;
+}
+header p {
+  font-size: x-large;
+  margin-right: 1000px;
+}
+li {
+  list-style-type: none;
+  font-size: x-large;
+  margin-right: 30px;
+}
+.mainDisplay {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding-bottom: 300px;
+  border-bottom: 1px solid black;
+}
+.mainDisplay p {
+  text-align: center;
+  width: 900px;
+  font-size: 120px;
+}
+.star {
+  font-size: 100px;
+  height: 70px;
+  color: red;
+}
+.belowStar {
+  margin-bottom: 30px;
+}
+.imgContainer {
+  position: absolute;
+  left: 300px;
+  top: 600px;
+  width: 140px;
+  height: 140px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
