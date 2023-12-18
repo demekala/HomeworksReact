@@ -59,6 +59,13 @@ footer {
   justify-content: center;
   margin-bottom: 0px;
 }
+@media (max-width: 1000px) {
+  .review P {
+    font-size: x-large;
+    margin-bottom: 0px;
+  }
+}
+
 @media (max-width: 600px) {
   nav {
     display: block;
@@ -78,5 +85,6 @@ footer {
   }
   .review P {
     margin-bottom: 100px;
+    font-size: large;
   }
 }
