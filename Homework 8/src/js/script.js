@@ -18,7 +18,7 @@ document.write("<br>");
 document.write("odd numbers: ");
 
 arr.forEach((number) => {
-  if (number % 2 == 0) document.write(number + ", ");
+  if (number % 2 === 1) document.write(number + ", ");
 });
 
 function getRandomInt(max) {
