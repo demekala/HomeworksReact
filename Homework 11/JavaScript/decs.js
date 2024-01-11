@@ -48,6 +48,11 @@ function showMovies(movies) {
     `;
 
     relatedMovesEl.appendChild(movieEl);
+
+    movieEl.addEventListener("click", (e) => {
+      localStorage.setItem("movieData", JSON.stringify(movie));
+      window.location.href = "./movie.html";
+    });
   });
 }
 
