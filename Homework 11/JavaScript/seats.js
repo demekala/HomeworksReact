@@ -4,62 +4,35 @@ const priceDisplay = document.getElementById("totalPrice");
 let totalPrice = 0;
 
 places.innerHTML = "";
+
 const seats = [
-  {
-    seat: "seat1",
-    price: "25GEL",
-    taken: true,
-  },
-  {
-    seat: "seat2",
-    price: "25GEL",
-    taken: true,
-  },
-  {
-    seat: "seat3",
-    price: "25GEL",
-    taken: false,
-  },
-  {
-    seat: "seat4",
-    price: "25GEL",
-    taken: false,
-  },
-  {
-    seat: "seat5",
-    price: "25GEL",
-    taken: true,
-  },
+  { seat: "seat1", price: 25, purchased: false, taken: true },
+  { seat: "seat2", price: 25, purchased: false, taken: true },
+  { seat: "seat3", price: 25, purchased: false, taken: false },
+  { seat: "seat4", price: 25, purchased: false, taken: false },
+  { seat: "seat5", price: 25, purchased: false, taken: true },
 ];
 
-seats.forEach((seat) => {
-  // totalPrice += parseInt(seat.price);
+const seatElements = seats.map((seat) => {
   const seatEl = document.createElement("div");
-  seatEl.classList.add("seat_places");
-  seatEl.classList.add(`${GetIfSeatTakenClassColor(seat.taken)}`);
+  seatEl.classList.add("seat_places", GetIfSeatTakenClassColor(seat.taken));
   seatEl.innerHTML = `
-          <h1>${seat.seat}</h1>
-          <h2>${seat.price}</h2>
-      `;
+    <h1>${seat.seat}</h1>
+    <h2>${seat.price}GEL</h2>
+  `;
 
-  // Add a click event listener to each seat element
   seatEl.addEventListener("click", () => {
     if (!seat.taken) {
-      seat.taken = true;
-      seatEl.classList.add(`green`);
-      seatEl.classList.remove("red");
-      totalPrice += parseInt(seat.price);
-      DisplayTotalPrice(); // Update the displayed total price
-    } else {
-      seat.taken = false;
-      seatEl.classList.add(`red`);
-      seatEl.classList.remove("green");
-      totalPrice -= parseInt(seat.price);
-      DisplayTotalPrice(); // Update the displayed total price
+      seat.purchased = !seat.purchased;
+      seatEl.classList.toggle("green", seat.purchased);
+      seatEl.classList.toggle("red", !seat.purchased);
+      totalPrice += seat.purchased ? seat.price : -seat.price;
+      DisplayTotalPrice();
     }
   });
 
   places.appendChild(seatEl);
+  return seatEl;
 });
 
 function GetIfSeatTakenClassColor(taken) {
@@ -67,15 +40,11 @@ function GetIfSeatTakenClassColor(taken) {
 }
 
 function DisplayTotalPrice() {
-  priceDisplay.innerHTML = `
-        totalPrice: ${parseInt(totalPrice)}GEL </br>
-        <button id="buyButton"> Buy </button>
-    `;
+  priceDisplay.textContent = `Total Price: ${totalPrice}GEL \n`;
+  priceDisplay.innerHTML += `<button id="buyButton"> Buy </button>`;
 
-  // Add event listener to the Buy button
   const buyButton = document.getElementById("buyButton");
-  buyButton.addEventListener("click", function () {
-    // Redirect to the specified link
-    window.location.href = "./../View/home.html";
+  buyButton.addEventListener("click", () => {
+    window.location.href = "./../View/Checkout.html";
   });
 }
