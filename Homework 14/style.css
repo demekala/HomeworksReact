@@ -1,0 +1,62 @@
+.pokemon {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  border-radius: 16px;
+}
+.poke-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  width: 90%;
+}
+img {
+  width: 150%;
+  height: 100%;
+}
+.img_container {
+  width: 50px;
+}
+
+.context-menu {
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.596);
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.context-menu:hover {
+  cursor: pointer;
+}
+
+.option {
+  font-size: large;
+  padding: 2px;
+}
+
+.chosen-pokemons {
+  position: absolute;
+  width: 10%;
+  right: 0px;
+  top: 80px;
+  height: 400px;
+}
+
+.chooseTeam {
+  position: absolute;
+  right: 40px;
+  bottom: 50px;
+  font-size: x-large;
+  width: 200px;
+  border-radius: 8px;
+  color: rgb(42, 36, 138);
+  border: 3px solid gray;
+}
+
+.chosen-poke {
+  width: 100px;
+  height: 100px;
+}
