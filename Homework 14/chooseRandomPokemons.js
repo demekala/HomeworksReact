@@ -1,5 +1,4 @@
 const poke_container = document.getElementById("poke-container");
-
 const pokemon_count = 5;
 
 const colors = {
@@ -73,16 +72,6 @@ const createPokemonCard = (pokemon) => {
 };
 
 fetchPokemon();
-
-// async function () {
-//     const config = {
-//         headers : {
-//             Accept : "application/json"
-//         }
-//     }
-
-//     fetch("https://icanhazdadjoke.com/")
-// }
 
 async function generateJoke() {
   const config = {
